@@ -1,9 +1,9 @@
-from figure import figure
+from figure import Figure
 
-class triangle(figure):
+class Triangle(Figure):
 
     def __init__(self, name, side_a, side_b, side_c):
-        figure.__init__(self, name)
+        Figure.__init__(self, name)
         try:
             self.side_a = side_a
             self.side_b = side_b
