@@ -1,10 +1,9 @@
-import math
-from figure import figure
+from figure import Figure
 
-class square(figure):
+class Square(Figure):
 
     def __init__(self, name, side):
-        figure.__init__(self, name)
+        Figure.__init__(self, name)
         try:
             self.side = side
             self.area = self.get_area()
