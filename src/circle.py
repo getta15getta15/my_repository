@@ -1,10 +1,9 @@
-import math
-from figure import figure
+from figure import Figure
 
-class circle(figure):
+class Circle(Figure):
 
     def __init__(self, name, radius):
-        figure.__init__(self, name)
+        Figure.__init__(self, name)
         try:
             self.radius = radius
             self.area = self.get_area()
@@ -17,3 +16,5 @@ class circle(figure):
     
     def get_perimeter(self):
         return 2 * 3.14 * self.radius
+
+my_circle = Circle("my_circle", 10)
