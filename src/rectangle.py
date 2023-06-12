@@ -1,9 +1,9 @@
-from figure import figure
+from figure import Figure
 
-class rectangle(figure):
+class Rectangle(Figure):
 
     def __init__(self, name, side_a, side_b):
-        figure.__init__(self, name)
+        Figure.__init__(self, name)
         try:
             self.side_a = side_a
             self.side_b = side_b
