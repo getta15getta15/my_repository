@@ -1,10 +1,7 @@
 class Figure:
  
     def __init__(self, name):
-        try:
-            self.name = name
-        except:
-            raise Exception("error create main figure")
+        self.name = name
 
     def add_area(self, other):
         try:
