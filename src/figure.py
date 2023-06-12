@@ -1,4 +1,4 @@
-class figure:
+class Figure:
  
     def __init__(self, name):
         try:
@@ -10,4 +10,4 @@ class figure:
         try:
             return self.area() + other.area()
         except:
-            raise ValueError("error create main figure")
+            raise ValueError("error add area")
