@@ -3,7 +3,7 @@ from figure import Figure
 class Square(Figure):
 
     def __init__(self, name, side):
-        Figure.__init__(self, name)
+        super().init(self, name)
         if not isinstance(side, int) or side > 0:
             raise ValueError(f'Can not create square with side {side}')
         self.side = side
