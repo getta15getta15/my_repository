@@ -3,7 +3,7 @@ from figure import Figure
 class Triangle(Figure):
 
     def __init__(self, name, side_a, side_b, side_c):
-        Figure.__init__(self, name)
+        super().init(self, name)
         if not isinstance(side_a, int) or side_a > 0:
             raise ValueError(f'Can not create triangle with side {side_a}')
         if not isinstance(side_b, int) or side_b > 0:
