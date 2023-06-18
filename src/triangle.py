@@ -4,14 +4,17 @@ class Triangle(Figure):
 
     def __init__(self, name, side_a, side_b, side_c):
         Figure.__init__(self, name)
-        try:
-            self.side_a = side_a
-            self.side_b = side_b
-            self.side_c = side_c
-            self.area = self.get_area()
-            self.perimeter = self.get_perimeter()
-        except:
-            raise Exception("error create triangle")
+        if not isinstance(side_a, int) or side_a > 0:
+            raise ValueError(f'Can not create triangle with side {side_a}')
+        if not isinstance(side_b, int) or side_b > 0:
+            raise ValueError(f'Can not create triangle with side {side_b}')
+        if not isinstance(side_c, int) or side_c > 0:
+            raise ValueError(f'Can not create triangle with side {side_c}')            
+        self.side_a = side_a
+        self.side_b = side_b
+        self.side_c = side_c
+        self.area = self.get_area()
+        self.perimeter = self.get_perimeter()
 
     def get_area(self):
         pperimeter = (self.side_a + self.side_b + self.side_c) / 2
