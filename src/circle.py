@@ -3,7 +3,7 @@ from figure import Figure
 class Circle(Figure):
 
     def __init__(self, name, radius):
-        Figure.__init__(self, name)
+        super().init(self, name)
         if not isinstance(radius, int) or radius > 0:
             raise ValueError(f'Can not create circle with radius {radius}')
             self.radius = radius
