@@ -4,12 +4,11 @@ class Square(Figure):
 
     def __init__(self, name, side):
         Figure.__init__(self, name)
-        try:
-            self.side = side
-            self.area = self.get_area()
-            self.perimeter = self.get_perimeter()
-        except:
-            raise Exception("error create square")
+        if not isinstance(side, int) or side > 0:
+            raise ValueError(f'Can not create square with side {side}')
+        self.side = side
+        self.area = self.get_area()
+        self.perimeter = self.get_perimeter()
 
     def get_area(self):
         return self.side ** 2
