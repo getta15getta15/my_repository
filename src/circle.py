@@ -4,12 +4,11 @@ class Circle(Figure):
 
     def __init__(self, name, radius):
         Figure.__init__(self, name)
-        try:
+        if not isinstance(radius, int) or radius > 0:
+            raise ValueError(f'Can not create circle with radius {radius}')
             self.radius = radius
             self.area = self.get_area()
             self.perimeter = self.get_perimeter()
-        except:
-            raise Exception("error create circle")
         
     def get_area(self):
         return 3.14 * self.radius ** 2
