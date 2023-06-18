@@ -4,13 +4,14 @@ class Rectangle(Figure):
 
     def __init__(self, name, side_a, side_b):
         Figure.__init__(self, name)
-        try:
-            self.side_a = side_a
-            self.side_b = side_b
-            self.area = self.get_area()
-            self.perimeter = self.get_perimeter()
-        except:
-            raise Exception("error create rectangle")
+        if not isinstance(side_a, int) or side_a > 0:
+            raise ValueError(f'Can not create rectangle with side {side_a}')
+        if not isinstance(side_b, int) or side_b > 0:
+            raise ValueError(f'Can not create rectangle with side {side_b}')
+        self.side_a = side_a
+        self.side_b = side_b
+        self.area = self.get_area()
+        self.perimeter = self.get_perimeter()
         
     def get_area(self):
         return self.side_a * self.side_b
