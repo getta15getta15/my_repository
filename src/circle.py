@@ -16,4 +16,3 @@ class Circle(Figure):
     def get_perimeter(self):
         return 2 * 3.14 * self.radius
 
-my_circle = Circle("my_circle", 10)
