@@ -21,5 +21,5 @@ def test_cat_notfind(animals, status_code):
 
 def test_jpg():
     my_rqst = requests.get("https://dog.ceo/api/breeds/image/random")
-    assert my_rqst.json()["message"].find("jpg") != -1
+    assert my_rqst.status_code == 200 and my_rqst.json()["message"].find("jpg") != -1
 
