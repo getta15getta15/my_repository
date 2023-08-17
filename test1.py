@@ -7,12 +7,12 @@ def test_itswork():
 
 def test_random():
     my_rqst = requests.get("https://dog.ceo/api/breeds/image/random")
-    assert my_rqst.json()["status"] == "success"
+    assert my_rqst.status_code == 200 and my_rqst.json()["status"] == "success"
 
 @pytest.mark.parametrize("count", [3])
 def test_random_image_by_size(count):
     my_rqst = requests.get(f"https://dog.ceo/api/breed/husky/images/random/{count}")
-    assert len(my_rqst.json()['message']) == count
+    assert my_rqst.status_code == 200 and len(my_rqst.json()['message']) == count
     
 @pytest.mark.parametrize("animals, status_code", [("cat", 404)])
 def test_cat_notfind(animals, status_code):
