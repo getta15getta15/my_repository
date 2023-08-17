@@ -10,7 +10,7 @@ def test_itswork(url):
 @pytest.mark.parametrize("post", ["1"])
 def test_get_post(url, post):
     my_rqst = requests.get(f'{url}{post}')
-    assert str(my_rqst.json()["id"]) == post
+    assert my_rqst.status_code == 200 and str(my_rqst.json()["id"]) == post
 
 @pytest.mark.parametrize("url", ["https://jsonplaceholder.typicode.com/comments?postId="])
 @pytest.mark.parametrize("post", ["1"])    
